@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!--{% include 'program/includes/nav.html' %}-->
+
+<div>
+
+    {% for course in courses %}
+    <a href="{% url 'course_detail' course.slug %}">Курсы: {{ course.title }}</a> <br>
+{% endfor %}
+
+    {% for module in modules %}
+    <a href="{% url 'module_detail' module.slug %}">Модули: {{ module.title }}</a> <br>
+{% endfor %}
+
+   {% for lesson in lessons %}
+    <table><a href="{% url 'lesson_detail' lesson.slug %}">Уроки: {{ lesson.title }}</a> </table>
+{% endfor %}
+
+</div>
+
+<!--{% include 'program/includes/nav.html' %}-->
+{% endblock %}

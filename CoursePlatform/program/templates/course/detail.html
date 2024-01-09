@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<a href="{% url 'course_create' %}">CREATE</a>
+<a href="{% url 'course_update' course.pk %}">UPDATE</a>
+<a href="{% url 'course_delete' course.slug %}">DELETE</a>
+<a href="{% url 'start_list' %}">BACK</a>
+<div>
+
+    <p>Курс: {{ course.title }}</p> <br>
+    <p>Описание курса: {{ course.description }}</p> <br>
+    <p>Количество часов: {{ course.average_time }}</p> <br>
+
+
+
+
+    {% for module in modules %}
+        <a href="{% url 'module_detail' module.slug %}">Модуль: {{ module.title }}</a>
+    {% endfor %}
+
+
+
+</div>
+
+
+
+{% endblock %}

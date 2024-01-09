@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<a href="{% url 'lesson_create' %}">CREATE</a>
+<a href="{% url 'lesson_update' lesson.slug %}">UPDATE</a>
+<a href="{% url 'lesson_delete' lesson.slug %}">DELETE</a>
+<a href="{% url 'start_list' %}">BACK</a>
+
+<div>
+    <p>Курс {{ course.title }}</p> <br>
+    <p>Номер модуля {{ lesson.module }}</p> <br>
+    <p>Урок: {{ lesson.title }}</p> <br>
+    <p>Описание урока: {{ lesson.content }}</p> <br>
+    <p>Прододжительность: {{ lesson.duration_time }}</p> <br>
+
+</div>
+{% endblock %}
